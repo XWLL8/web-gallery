@@ -1,0 +1,540 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
+  margin: 0; /* Remove default margin */
+}
+
+/*nav bar BGN*/
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.nav-area {
+  height: 60px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px); /* Initial blur effect */
+  background-color: rgba(0, 0, 0, 0); /* Start with full transparency */
+  transition: background-color 0.5s, backdrop-filter 0.5s;
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.nav-area.visible {
+  backdrop-filter: blur(10px); /* Maintain the blur effect when visible */
+  background-color: rgba(0, 0, 0, 0.7); /* Adjust the color and transparency */
+  z-index: 1001; /* Ensure the navigation bar is on top */
+}
+
+.logo {
+  margin: 10px 40px;
+  height: 50px;
+  color: #bcbaba;
+  font-size: 35px;
+  text-transform: capitalize;
+  max-width: 100%
+}
+
+.title{
+  margin-left: -300px;
+  color: #ff8104;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f1f1f1;
+}
+
+.menu-area {
+  float: right;
+  list-style: none;
+  margin: 20px;
+}
+
+.menu-area li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.menu-area li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 5px 10px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.menu-area li a:hover {
+  color: rgb(255, 136, 0);
+}
+
+.menu-area li:last-child a {
+  padding: 10px 20px; /* Adjust padding to create a button-like appearance */
+  background-color: #ff8104; /* Set a background color */
+  color: #fff; /* Set text color */
+  border-radius: 5px; /* Add border-radius for rounded corners */
+  text-decoration: none; /* Remove underlines */
+  transition: background-color 0.3s, color 0.3s; /* Add a smooth transition effect */
+}
+
+.menu-area li:last-child a:hover {
+  background-color: #fff; /* Change background color on hover */
+  color: #000; /* Change text color on hover */
+}
+
+/*nav bar END*/
+
+/*header BGN*/
+header {
+  height: 100vh;
+  display: sticky;
+}
+header::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 20px; /* Adjust the height of the shadow as needed */
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+  z-index: 1; /* Ensure the shadow is above the video */
+}
+
+.vid-bg {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+header .welcome-text {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.welcome-text h2 {
+  color: #fff;
+  margin: 0;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 200px;
+  font-weight: 800;
+  transition: 0.5s;
+  
+}
+
+.welcome-text h2:hover{
+  -webkit-text-stroke: 2px #fff;
+  color: transparent;
+}
+
+.welcome-text p {
+  color: #fff;
+  font-size: 18px;
+  width: 45%;
+  line-height: 1.8;
+  margin: auto;
+  font-weight: bold;
+}
+.btn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  padding: 10px 30px;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 25px;
+  display: inline-block;
+  margin-top: 25px;
+  border: 2px solid #fff;
+  transition: background .6s ease-in;
+  
+}
+.btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Gelasio', serif;
+}
+.black-sectionG,
+.white-section {
+  padding: -20px 0;
+}
+
+.black-sectionG {
+  background-color: #000;
+  color: #fff;
+}
+
+.white-section {
+  background-color: #fff;
+  color: #000; 
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.image-listG {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  position: relative;
+}
+
+.image-itemG {
+  margin: 10px; /* Add margin between images */
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.image-itemG img {
+  width: 300px;
+  height: auto;
+  display: block;
+  
+}
+
+.image-itemG:hover img {
+  transform: scale(1.1);
+}
+
+.image-infoG {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translatey(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: center;
+  background: #000;
+  color:#fff;
+  padding: 10px;
+  display: none;
+
+}
+
+.image-itemG:hover .image-infoG {
+  opacity: 1;
+  display: block;
+}
+.descriptionG{
+  font-family: 'Gelasio', serif;
+}
+.descriptionG,
+.contact-infoG {
+  display: none;
+  
+}
+
+.image-itemG:hover .descriptionG,
+.image-itemG:hover .contact-infoG {
+  display: block;
+}
+
+.bold-centeredG {
+  font-weight: bold;
+  text-align: center;
+}
+
+
+.image-listG {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.image-itemG {
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  transition: transform 0.3s ease;
+}
+
+.image-itemG img {
+  width: 300px;
+  height: auto;
+}
+
+.image-infoG p {
+  font-size: -5px;
+  padding-bottom: 10%;
+  padding-top: 10%;
+  text-align: center;
+  margin: 0;
+  color: #fff;
+  transition: font-size 0.3s ease;
+}
+
+.image-itemG:hover .image-info p {
+  font-size: 25px;
+  opacity: 1;
+}
+
+.image-itemG:hover {
+  transform: scale(1.1);
+}
+
+.image-infoG {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: center;
+}
+
+.image-itemG:hover .image-info {
+  opacity: 1;
+}
+.contact-buttonG {
+  background: tan;
+  padding: 5px 30px;  /* Adjust button padding */ 
+  color: #fff; /* Button text color */
+  border: none; /* Remove button border */
+  cursor: pointer; /* Show pointer on hover */
+  transition: background-color 0.6s ease-in; /* Add transition effect */
+  border-radius:25px;
+  font-size: 15px;
+  font-weight: bold;
+  border: 2px solid #fff;
+  text-transform:uppercase ;
+}
+
+/* Hover effect for contact button */
+.contact-buttonG:hover {
+  background-color: #fff; /* Change background color on hover */
+  color: #ff8104; /* Change text color on hover */
+}
+
+.blockquote {
+  max-width: 600px;
+  margin: 10px 30px;
+  padding: 25px;
+  border: 1 px solid rgb(182, 132, 70) ;
+  color: rgb(222, 109, 11);
+  box-sizing: border-box;
+}
+
+.blockquote__text {
+  font-family: 'Gelasio', serif;
+  font-style: italic;
+  font-size:2em ;
+  line-height: 1.5;
+   margin: 0;
+  
+  
+}
+
+.blockquote__text__credit {
+  font-weight: bold;
+  font-style: normal;
+  text-align: right;
+  font-size: 1.5em ;
+  
+
+
+}
+
+.blockquote__text__credit::before {
+  content: "\2014\0020"
+  
+}
+
+.blockquote__quoted::before {
+content: "\201c";
+font-size: 100px;
+color: #ff8104;
+display: block;
+margin-bottom:0; /*-20 both */
+margin-top:0;
+
+}
+
+.blockquote_container{
+  display: flex;
+align-items: center;
+}
+
+.gif-containerG {
+  text-align: right; /* Center the GIF horizontally */
+  margin-top: 0; /* Adjust margin as needed / /-50 both */
+  margin-left: auto;
+  
+}
+
+.gif-container img {
+  max-width: 80%; /* Ensure the GIF doesn't exceed its container width */
+  height: auto; /* Maintain aspect ratio */
+  
+}
+
+
+footer {
+  width: 100%;
+  background: linear-gradient(to right,#0a0a0a, #0a0a0a, #ff8104);;
+  color: #fff;
+  padding: 20px;
+  border-top-left-radius: 125px;
+  font-size: 13px;
+  line-height: 20px;
+  margin-top: auto; /* Push the footer to the bottom */
+}
+
+.row{
+  width: 85%;
+  margin: auto;
+  display: flex;
+  flex-wrap: flex-start;
+  justify-content: space-between;
+
+}
+
+.col{
+  flex-basis: 25%;
+  padding: 10px;
+}
+
+.Fotterlogo{
+  width: 80px;
+  margin-bottom: 30px;
+}
+
+.col h3{
+  width: fit-content;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.email-id{
+  width: fit-content;
+  border-bottom: 1px solid#ccc;
+  margin: 20px 0;
+}
+
+ul li {
+  list-style: none;
+  margin-bottom: 12px;
+  color: #fff; /* Add this line to set the text color to white */
+}
+
+ul li a {
+  text-decoration: none;
+  color: #fff; /* Set the link color to white */
+}
+
+form{
+  padding-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 50px;
+}
+
+form .fa-solid{
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+form .fa-regular{
+  font-size: 18px;
+  margin-right: 10px;
+  margin-left: 5px;
+}
+
+form textarea{
+  width: 100%;
+  background: transparent;
+  color: #898989;
+  border: 0;
+  outline: none;
+  font-size: 15px;
+}
+
+form button{
+  background: transparent;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+}
+
+form button.fas{
+  font-size: 16px;
+  color: #ccc;
+}
+
+hr{
+  width: 99%;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  margin: 20px auto;
+}
+
+.copyright{
+  text-align: center;
+}
+
+.underline{
+  width: 100%;
+  height: 5px;
+  background: #767676;
+  border-radius: 3px;
+  position: absolute;
+  top: 25px;
+  left: 0;
+  overflow: hidden;
+}
+
+.underline span{
+  width: 15px;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 3px;
+  position: absolute;
+  top: o;
+  left: 10px;
+  animation: moving 2s linear infinite;
+}
+
+@keyframes moving{
+  0%{
+      left: -20px;
+  }
+  100%{
+      left: 100px;
+  }
+}
+
+
+
