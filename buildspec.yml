@@ -9,7 +9,7 @@ phases:
   build:
     commands:
       - echo Navigating to the project directory...
-      - cd "web gallery-2 this version works"
+      - cd "web gallery-2 this version works" 
       - echo Building the Docker image...
       - docker build -t $REPOSITORY_URI:latest .
   post_build:
