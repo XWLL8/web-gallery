@@ -4,10 +4,12 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
-      - aws ecr get-login-password --region ap-southeast-2 | docker login --username AWS --password-stdin 257394479361.dkr.ecr.ap-southeast-2.amazonaws.com
-      - REPOSITORY_URI=257394479361.dkr.ecr.ap-southeast-2.amazonaws.com/my-app
+      - aws ecr get-login-password --region me-south-1 | docker login --username AWS --password-stdin 257394479361.dkr.ecr.me-south-1.amazonaws.com
+      - REPOSITORY_URI=257394479361.dkr.ecr.me-south-1.amazonaws.com/my-app
   build:
     commands:
+      - echo Navigating to the project directory...
+      - cd "web gallery-2 this version works"
       - echo Building the Docker image...
       - docker build -t $REPOSITORY_URI:latest .
   post_build:
