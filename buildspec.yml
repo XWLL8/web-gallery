@@ -6,17 +6,21 @@ phases:
       - echo Logging in to Amazon ECR...
       - aws ecr get-login-password --region me-south-1 | docker login --username AWS --password-stdin 257394479361.dkr.ecr.me-south-1.amazonaws.com
       - REPOSITORY_URI=257394479361.dkr.ecr.me-south-1.amazonaws.com/my-web-app
+
   build:
     commands:
       - echo Navigating to the project directory...
       - cd web-gallery
       - echo Building the Docker image...
       - docker build -t $REPOSITORY_URI:latest .
+
   post_build:
     commands:
       - echo Pushing the Docker image to ECR...
       - docker push $REPOSITORY_URI:latest
+      - echo Writing imagedefinitions.json file...
+      - printf '[{"name":"my-web-app-container","imageUri":"%s"}]' "$REPOSITORY_URI:latest" > imagedefinitions.json
 
 artifacts:
   files:
-    - '**/*'
+    - imagedefinitions.json
