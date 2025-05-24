@@ -1,19 +1,23 @@
-# Web Gallery Project  
-**A dynamic image gallery with filtering and search functionality.**  
+# 🚀 AWS Containerized Web Application  
+**Highly available web app deployed on ECS/Fargate with CI/CD**  
 
-👉 [Live Demo](https://xwll8.github.io/web-gallery/)  
+👉 **Live Demo**: [Your-Demo-URL] *(if applicable)*  
 
-## Features  
-- Filter images by category (e.g., Nature, Cars).  
-- Search by image title.  
-- Responsive design (Bootstrap).  
+## 🔧 Key Features  
+- **High Availability**: Multi-AZ deployment (99.9% uptime).  
+- **CI/CD Pipeline**: Automated deployments via AWS CodePipeline.  
+- **Serverless Containers**: Managed with ECS/Fargate.  
+- **Monitoring**: CloudWatch alerts/logs.  
 
-## Tech Stack  
-- HTML5, CSS3, JavaScript  
-- jQuery (for DOM manipulation)  
-- Bootstrap 5 (styling)  
+## 📦 Tech Stack  
+| Service               | Use Case                          |
+|-----------------------|-----------------------------------|
+| AWS ECS + Fargate     | Container orchestration           |
+| AWS CodePipeline      | CI/CD automation                 |
+| Amazon ECR            | Docker image storage              |
+| CloudWatch            | Logging & monitoring             |
 
-## How to Run  
-1. Clone the repo:  
-```bash  
-git clone https://github.com/XWLL8/web-gallery.git  
+## 🛠️ Setup  
+1. **Clone the repo**:  
+   ```bash
+   git clone https://github.com/your-repo/aws-containerized-app.git
