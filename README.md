@@ -1,7 +1,8 @@
 # 🚀 AWS Containerized Web Application  
 **Highly available web app deployed on ECS/Fargate with CI/CD**  
 
-👉 **Live Demo**: [Your-Demo-URL] *(if applicable)*  
+
+![tuwaiq project diagram](https://github.com/user-attachments/assets/3820db2f-c5e2-4cf7-8d0d-aacdedde52e9)
 
 ## 🔧 Key Features  
 - **High Availability**: Multi-AZ deployment (99.9% uptime).  
